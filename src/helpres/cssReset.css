@@ -3,12 +3,18 @@
     padding: 0px;
     margin: 0px;
     border: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #2c3e60;
 }
 
 :focus,
@@ -61,6 +67,7 @@ p {
 ul,
 ul li {
     list-style: none;
+    list-style-type: none;
 }
 
 img {
