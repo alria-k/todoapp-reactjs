@@ -47,6 +47,11 @@
   flex-direction: column-reverse;
 }
 
+.form-list__empty {
+  text-align: center;
+  opacity: 0.4;
+}
+
 .form__checkbox {
   position: relative;
   min-width: 20px;

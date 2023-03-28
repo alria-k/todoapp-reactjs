@@ -3,7 +3,18 @@ import { FormList } from "../index";
 
 export function Form() {
   const [text, setText] = React.useState("");
-  const [todos, setTodos] = React.useState([]);
+  const [todos, setTodos] = React.useState(() => {
+    const getStorage = localStorage.getItem("todos");
+    if (getStorage) {
+      const turnStorageArr = getStorage.split(",");
+      return turnStorageArr;
+    }
+    return [];
+  });
+
+  React.useEffect(() => {
+    localStorage.setItem("todos", todos);
+  }, [todos]);
 
   const handleChange = (e) => {
     setText(e.target.value);
@@ -21,7 +32,13 @@ export function Form() {
       <div className="form__container">
         <div className="form__inner">
           <h1 className="form__title">Add new todo in List!</h1>
-          <label className="form-input__container">
+          <form
+            className="form-input__container"
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleTodos;
+            }}
+          >
             <input
               className="form__input"
               type="text"
@@ -32,7 +49,7 @@ export function Form() {
             <button className="form__btn" onClick={handleTodos}>
               Add Todo!
             </button>
-          </label>
+          </form>
         </div>
         <ul className="form-list__box">
           {todos.length > 0 ? (
@@ -40,7 +57,7 @@ export function Form() {
               return <FormList key={index} val={elem} />;
             })
           ) : (
-            <div>No Todos</div>
+            <div className="form-list__empty">No Todos</div>
           )}
         </ul>
       </div>
