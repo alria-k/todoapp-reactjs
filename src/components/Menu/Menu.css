@@ -1,0 +1,52 @@
+.menu__container {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.menu__img {
+  width: 30px;
+  height: 40px;
+  max-width: 360px;
+  background-image: url("../../assets/img/hamburger-menu-dots-svgrepo-com.svg");
+  background-position: 2% 50%;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  padding: 10px;
+  border-radius: 16px;
+  background-color: white;
+  transition: width .4s ease-in-out;
+}
+
+.menu__img:hover {
+  width: 100%;
+  background-position: 2% 50%;
+}
+
+.menu__img:hover .menu__inner {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  transition-delay: 200ms;
+}
+
+.menu__inner {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  padding-left: 40px;
+}
+
+.menu-item {
+  padding-right: 20px;
+  color: grey;
+}
+
+.menu-link {
+  font-size: 20px;
+}
+
+.menu-link:hover {
+  text-decoration: underline;
+}

@@ -24,7 +24,15 @@ export function Form() {
 
   const handleChecked = (e, id) => {
     setChecked(e.target.checked);
-    console.log(id);
+    setTodos(
+      todos.map((elem) => {
+        if (elem.id == id) {
+          return { ...elem, compleated: checked };
+        } else {
+          return elem;
+        }
+      })
+    );
   };
 
   const handleTodos = () => {

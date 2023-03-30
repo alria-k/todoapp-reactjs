@@ -8,7 +8,7 @@ export function FormList({ obj, func }) {
           name="form-checkbox"
           type="checkbox"
           checked={obj.compleated}
-          onChange={() => {
+          onChange={(e) => {
             func(e, obj.id);
           }}
         />
