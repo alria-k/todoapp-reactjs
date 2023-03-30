@@ -1,1 +1,3 @@
-export function Finished() {}
+export function Finished() {
+  return <div>lol</div>;
+}
