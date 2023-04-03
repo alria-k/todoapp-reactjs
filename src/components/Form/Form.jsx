@@ -1,6 +1,7 @@
 import React from "react";
-import { FormList, Menu } from "../index";
+import { Menu } from "../index";
 import { v4 as uuidv4 } from "uuid";
+import { Outlet } from "react-router-dom";
 
 export function Form() {
   const [text, setText] = React.useState("");
@@ -14,14 +15,6 @@ export function Form() {
     return [];
   });
 
-  React.useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
-  const handleChange = (e) => {
-    setText(e.target.value);
-  };
-
   const handleChecked = (e, id) => {
     setChecked(e.target.checked);
     setTodos(
@@ -33,6 +26,14 @@ export function Form() {
         }
       })
     );
+  };
+
+  React.useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+  const handleChange = (e) => {
+    setText(e.target.value);
   };
 
   const handleTodos = () => {
@@ -75,15 +76,7 @@ export function Form() {
             </button>
           </form>
         </div>
-        <ul className="form-list__box">
-          {todos.length > 0 ? (
-            todos.map((elem) => {
-              return <FormList key={elem.id} obj={elem} func={handleChecked} />;
-            })
-          ) : (
-            <div className="form-list__empty">No Todos</div>
-          )}
-        </ul>
+        <Outlet context={{ todos: todos, func: handleChecked }} />
       </div>
     </div>
   );
