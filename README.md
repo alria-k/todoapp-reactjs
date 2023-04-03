@@ -27,4 +27,4 @@ approve the condition (completed == false || true) and return the FormList compo
 
 # What did i learn?
 
-React-router-DOM, useOutletContext(), Link, BrowserRouter, improved right file structure, Markdown language
+React-router-DOM, useOutletContext(), Link, BrowserRouter, improved right file structure, Markdown language, localStorage in React, uuid libary.

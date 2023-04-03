@@ -50,3 +50,19 @@
 .menu-link:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 425px) {
+  .menu-link {
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  .menu-item {
+    padding-right: 0px;
+  }
+  .menu__inner {
+    justify-content: space-between;
+  }
+  .menu__img:hover .menu__inner {
+    transition-delay: 350ms;
+  }
+}

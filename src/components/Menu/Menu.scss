@@ -45,3 +45,25 @@
         }
     }
 }
+
+@media (max-width: 425px){
+    .menu{
+        &-link{
+            font-size: 14px;
+            vertical-align: middle;
+        }
+        &-item{
+            padding-right: 0px;
+        }
+        &__inner{
+            justify-content: space-between;
+        }
+        &__img{
+            &:hover{
+                .menu__inner{
+                    transition-delay: 350ms;
+                }
+            }
+        }
+    }
+}
